@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><link rel="stylesheet" type="text/css" href="../css/css.css">
+  <title>Laboratory Calculator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <meta charset="utf-8" name="description" content="A complete laboratory calculator for your clinical needs">
+    <h1 style="color:blue;font-family:comic sans ms;" align="center">
+      <b>Clinical Laboratory Calculator</b>
+    </h1>
+</head>
+  
+<body><script src="../js/js.js"></script>
+<div class="container">
+  <b><ul class="nav nav-pills" style="font-family:comic sans ms;" align="center">
+    <li class="tablinks" onclick="openDept(event, 'Biochemistry')"><a href="#">BIOCHEMISTRY</a></li>
+    <li class="tablinks"  onclick="openDept(event, 'Hematology')"><a href="#">HEMATOLOGY</a></li>
+    <li class="tablinks"  onclick="openDept(event, 'Microbiology')"><a href="#">MICROBIOLOGY</a></li>
+    <li class="tablinks"  onclick="openDept(event, 'QualityControl')"><a href="#">QUALITY CONTROL</a></li>
+  </ul>
+</div>
+  
+<div id="Biochemistry" class="tabcontent">
+    <div class="sidelink">
+      <section id="calc1" href="lp.html">
+        <input type="radio" name="calculations" id="calculation1" checked>
+        <label for="calculation1">Lipid Profile</label>
+          <form>
+            <table id="liprof">
+              <tr>
+                <td align="left">Cholesterol&nbsp;</td>
+                <td align="center"><input type="text" name="cholesterol" id="cholesterol" style="color:blue;font-weight:bold"></td>
+              </tr>
+              <tr>
+                <td align="left">HDL&nbsp;</td>
+                <td align="center"><input type="text" name="hdl" id="hdl" style="color:blue;font-weight:bold"></td>
+              </tr>
+              <tr>
+                <td align="left">LDL&nbsp;</td>
+                <td align="center"><input type="text" name="ldl" id="ldl" style="color:blue;font-weight:bold"></td>
+              </tr>
+              <tr>
+                <td align="left">VLDL&nbsp;</td>
+                <td align="center"><output type="text" name="vldl" id="vldl" style="color:blue;font-weight:bold"></td>
+              </tr>
+              <tr>
+                <td align="left">Triglycerides&nbsp;</td>
+                <td align="center"><input type="text" name="triglycerides" id="trig" style="color:blue;font-weight:bold"></td>
+              </tr>
+              <tr>
+                <td align="left">LDL Calculated:&nbsp;</td>
+                <td align="center"><output type="text" name="ldlc" id="ldlc" style="color:blue;font-weight:bold"></td>
+              </tr>
+              <tr>
+                <td align="left">Cholesterol/HDL ratio:&nbsp;</td>
+                <td align="center"><output type="number" name="cholhdl" id="cholhdl" style="color:blue;font-weight:bold"></td>
+              </tr>
+              <tr> 
+                <td align="left">HDL/LDL ratio:&nbsp;</td>
+                <td align="center"><output type="number" name="hdlldl" id="hdlldl" style="color:blue;font-weight:bold"></td>
+              </tr>
+              <tr>
+                <td align="left">LDL/HDL ratio:&nbsp;</td>
+                <td align="center"><output type="number" name="ldlhdl" id="ldlhdl" style="color:blue;font-weight:bold"></output></td>
+              </tr>
+            </table>
+            <input type="button" class="button" value="CALCULATE" onclick="calclp()"></input>
+            <input type="button" class="button" value="Reset" onclick="resetcalclp()"></input>
+          <p><strong>Note:</strong> If there is a value on the direct LDL, this will be used for calculating the ratios; the calculated LDL is just for comparison.
+         </form>
+      </section>
+      <section id="calc2">
+        <input type="radio" name="calculations" id="calculation2" checked>
+        <label for="calculation2">eGFR</label>
+        <form>
+          <table id="egfrt">
+            <tr><p>ADULT</p>
+              <td align="left">Serum Creatinine:&nbsp;</td>
+              <td align="center" colspan="2"><input type="text" name="screa3" id="screa3" style="color:blue;font-weight:bold"></td>
+            </tr>
+            <tr>
+              <td align="left">Age:&nbsp;</td>
+              <td align="center" colspan="2"><input type="text" name="age" id="age" style="color:blue;font-weight:bold"></td>
+            </tr>
+            <tr>
+              <td align="left">Gender:&nbsp;</td>
+              <td align="center"><input type="radio" name="egfradgen" id="genm" style="color:blue;font-weight:bold" checked><label for="genm">Male</label></td>
+              <td align="center"><input type="radio" name="egfradgen" id="genf" style="color:blue;font-weight:bold" checked><label for="genf">Female</label></td>
+            </tr>
+            <tr>
+              <td align="left">Race:&nbsp;</td>
+              <td align="center"><input type="radio" name="egfradrace" id="raceb" style="color:blue;font-weight:bold" checked><label for="raceb">Black</label></td>
+              <td align="center"><input type="radio" name="egfradrace" id="raceo" style="color:blue;font-weight:bold" checked><label for="raceo">Others</label></td>
+            </tr>
+            <tr>
+              <td align="left">eGFR (mL/min/1.73m<sup>2</sup>):&nbsp;</td>
+              <td align="center" colspan="2"><output type="text" name="egfr" id="egfr" style="color:blue;font-weight:bold"></td>
+            </tr>
+          </table>
+          <input type="button" class="button" value="CALCULATE" onclick="calcegfr()"></input>
+          <input type="button" class="button" value="Reset" onclick="resetegfr()"></input>
+            <p><strong>Note:</strong> The formula used in this equation is based on the CKD-EPI Creatinine Equation (2009)</p>
+            <br></br>
+          <table id="egfrpt">
+            <tr><p>PEDIATRIC</p>
+              <td align="left">Serum Creatinine:&nbsp;</td>
+              <td align="center" colspan="2"><input type="text" name="screa3p" id="screa3p" style="color:blue;font-weight:bold"></td>
+            </tr>
+            <tr>
+              <td align="left">Age:&nbsp;</td>
+              <td align="center" colspan="2"><input type="text" name="agep" id="agep" style="color:blue;font-weight:bold"></td>
+            </tr>
+            <tr>
+              <td align="left">Gender:&nbsp;</td>
+              <td align="center"><input type="radio" name="egfradgenp" id="genmp" style="color:blue;font-weight:bold" checked><label for="genmp">Male</label></td>
+              <td align="center"><input type="radio" name="egfradgenp" id="genfp" style="color:blue;font-weight:bold" checked><label for="genfp">Female</label></td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="2">Height:&nbsp;</td>
+              <td align="center" colspan="2"><input type="text" name="height" id="height" style="color:blue;font-weight:bold"></td>
+            </tr>
+            <tr>
+              <td align="center"><input type="radio" name="egfradh" id="hcm" style="color:blue;font-weight:bold" checked><label for="hcm">Centimeters</label></td>
+              <td align="center"><input type="radio" name="egfradh" id="hmet" style="color:blue;font-weight:bold" checked><label for="hmet">Meters</label></td>
+            </tr>
+            <tr>
+              <td align="left">eGFR (mL/min/1.73m<sup>2</sup>):&nbsp;</td>
+              <td align="center" colspan="2"><output type="text" name="egfr" id="egfr" style="color:blue;font-weight:bold"></td>
+            </tr>
+          </table>
+          <input type="button" class="button" value="CALCULATE" onclick="calcegfr()"></input>
+          <input type="button" class="button" value="Reset" onclick="resetegfr()"></input>
+            <p><strong>Note:</strong> The formula used in this equation is based on the CKD-EPI Creatinine Equation (2009)</p>
+        </form>
+      </section>
+      <section id="calc3">
+        <input type="radio" name="calculations" id="calculation3" checked>
+        <label for="calculation3">24 Hr Urine Chemistry</label>
+        <form>
+          <table id="uchem">
+            <tr>
+              <td align="left">24hr Urine Volume (ml)&nbsp;</td>
+              <td align="center"><input type="text" name="uvol" id="uvol" style="color:blue;font-weight:bold" onkeyup="calcuchem"></td>
+              <td align="center"><output type="text" name="acr" id="acr" style="color:blue;font-weight:bold"></td>
+              <td align="center" style="width:200px">(Alb/g Creatinine) A/C Ratio&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="left">Urine Albumin (mg/L)&nbsp;</td>
+              <td align="center"><input type="text" name="ualb" id="ualb" style="color:blue;font-weight:bold" onkeyup="calcuac()"></td>
+              <td align="center"><output type="text" name="24ualb" id="24ualb" style="color:blue;font-weight:bold" ></td>
+              <td align="center" style="width:200px"> (mg/24hrs)&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="left">Urine Creatinine (mg/dL)&nbsp;</td>
+              <td align="center"><input type="text" name="ucrea" id="ucrea" style="color:blue;font-weight:bold" onkeyup="calcuac()"></td>
+              <td align="center"><output type="text" name="24ucrea" id="24ucrea" style="color:blue;font-weight:bold"></td>
+              <td align="center" style="width:200px"> (mg/24hrs)&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="left">Urine Calcium (mg/dL)&nbsp;</td>
+              <td align="center"><input type="text" name="ucal" id="ucal" style="color:blue;font-weight:bold" onkeyup="calcuca()"></td>
+              <td align="center"><output type="text" name="24ucal" id="24ucal" style="color:blue;font-weight:bold"></td>
+              <td align="center" style="width:200px"> (mg/24hrs)&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="left">Urine Phosphorus (mg/dL)&nbsp;</td>
+              <td align="center"><input type="text" name="uphos" id="uphos" style="color:blue;font-weight:bold" onkeyup="calcuphos()"></td>
+              <td align="center"><output type="text" name="24uphos" id="24uphos" style="color:blue;font-weight:bold"></td>
+              <td align="center" style="width:200px"> (mg/24hrs)&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="left">Urine Magnesium (mg/dL)&nbsp;</td>
+              <td align="center"><input type="text" name="umag" id="umag" style="color:blue;font-weight:bold" onkeyup="calcumag()"></td>
+              <td align="center"><output type="text" name="24umag" id="24umag" style="color:blue;font-weight:bold"></td>
+              <td align="center" style="width:200px">(mg/24hrs)&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="left">Urine Uric Acid (mg/dL)&nbsp;</td>
+              <td align="center"><input type="text" name="uuric" id="uuric" style="color:blue;font-weight:bold" onkeyup="calcuuric()"></td>
+              <td align="center"><output type="text" name="24uuric" id="24uuric" style="color:blue;font-weight:bold"></td>
+              <td align="center" style="width:200px"> (mg/24hrs)&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="left">Urine Sodium (mmol/L)&nbsp;</td>
+              <td align="center"><input type="text" name="usod" id="usod" style="color:blue;font-weight:bold" onkeyup="calcusod()"></td>
+              <td align="center"><output type="text" name="24usod" id="24usod" style="color:blue;font-weight:bold"></td>
+              <td align="center" style="width:200px"> (mmol/24hrs)&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="left">Urine Potassium (mmol/L)&nbsp;</td>
+              <td align="center"><input type="text" name="upot" id="upot" style="color:blue;font-weight:bold" onkeyup="calcupot()"></td>
+              <td align="center"><output type="text" name="24upot" id="24upot" style="color:blue;font-weight:bold"></td>
+              <td align="center" style="width:200px"> (mmol/24hrs)&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="left">Urine Chloride (mmol/L)&nbsp;</td>
+              <td align="center"><input type="text" name="uchlo" id="uchlo" style="color:blue;font-weight:bold" onkeyup="calcuchlo()"></td>
+              <td align="center"><output type="text" name="24uchlo" id="24uchlo" style="color:blue;font-weight:bold"></td>
+              <td align="center" style="width:200px"> (mmol/24hrs)&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="left">Urine Total Protein (mg/L)&nbsp;</td>
+              <td align="center"><input type="text" name="utp" id="utp" style="color:blue;font-weight:bold" onkeyup="calcutp()"></td>
+              <td align="center"><output type="text" name="24utp" id="24utp" style="color:blue;font-weight:bold"></td>
+              <td align="center" style="width:200px"> (mg/24hrs)&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="left">Urine Urea (mg/dL)&nbsp;</td>
+              <td align="center"><input type="text" name="uurea" id="uurea" style="color:blue;font-weight:bold" onkeyup="calcuurea()"></td>
+              <td align="center"><output type="text" name="24uurea" id="24uurea" style="color:blue;font-weight:bold;width:100px"></td>
+              <td align="center" style="width:200px">(g/24hrs) &nbsp;</td>
+            </tr>
+          </table>
+          <p></p>
+          <input align="center" class="button" type="button" value="Reset" onclick="resetuchem()"></input>
+        <p></p>
+        <p></p>
+        </form>
+      </section>
+      <section id="calc4">
+        <input type="radio" name="calculations" id="calculation4" checked>
+        <label for="calculation4">Creatinine Clearance</label>
+        <form>
+          <table id="creatclear"
+            <tr>
+              <td align="right">24hr Urine Volume (ml)&nbsp;</td>
+              <td align="left"><input type="text" name="uvol2" id="uvol2" style="color:blue;font-weight:bold"></td>
+            </tr>
+            <tr>
+              <td align="right">Serum Creatinine (mg/dL)&nbsp;</td>
+              <td align="left"><input type="text" name="screa2" id="screa2" style="color:blue;font-weight:bold"></td>
+            </tr>
+            <tr>
+              <td align="right">Urine Creatinine (mg/dL)&nbsp;</td>
+              <td align="left"><input type="text" name="ucrea2" id="ucrea2" style="color:blue;font-weight:bold"></td>
+            </tr>
+            <tr>
+              <td align="right">Collection Time (hrs)&nbsp;</td>
+              <td align="left"><input type="text" name="coltime" id="coltime" style="color:blue;font-weight:bold"></td>
+            </tr>
+            <tr>
+              <td align="right">Height (ft)&nbsp;</td>
+              <td align="left"><input type="text" name="height" id="height" style="color:blue;font-weight:bold" onkeyup="calcbsa()"></td>
+            </tr>
+            <tr>
+              <td align="right">Weight (kg)&nbsp;</td>
+              <td align="left"><input type="text" name="weight" id="weight" style="color:blue;font-weight:bold" onkeyup="calcbsa()"></td>
+            </tr>
+            <tr>
+              <td align="right">Body Surface Area (m<sup>2</sup>):&nbsp;</td>
+              <td align="left"><output type="text" name="bsa" id="bsa" style="color:blue;font-weight:bold"></td>
+            </tr>
+            <tr>
+              <td align="right">Creatinine Clearance (ml/min):&nbsp;</td>
+              <td align="left"><output type="text" name="creaclear" id="creaclear" style="color:blue;font-weight:bold"></td>
+            </tr>
+            <tr>
+              <td align="right">Corrected Creatinine Clearance (ml/min/1.73 m<sup>2</sup>):&nbsp;</td>
+              <td align="left"><output type="text" name="corcreaclear" id="corcreaclear" style="color:blue;font-weight:bold"></td>
+            </tr>
+          </table>
+          <input type="button" class="button" value="CALCULATE" onclick="calccreaclear()"></input>
+          <input type="button" class="button" value="Reset" onclick="resetcreaclear()"></input>
+        </form>
+      </section>
+      <section id="calc10">
+        <input type="radio" name="calculations" id="calculation10" checked>
+        <label for="calculation10">Urea to BUN</label>
+        <form>
+          <table id="ubunt">
+            <tr>
+              <td align="right">Urea (mg/dL)&nbsp;</td>
+              <td align="left"><input type="text" name="surea" id="surea" style="color:blue;font-weight:bold" onkeyup="calcbun()"></td>
+            </tr>
+            <tr>
+              <td align="right">BUN (mg/dL)&nbsp;</td>
+              <td align="center"><output type="text" name="bun" id="bun" style="color:blue;font-weight:bold"></td>
+            </tr>
+          </table>
+          <input type="button" class="button" value="Reset" onclick="resetbun()"></input>
+        </form>
+      </section>
+      <section id="calc11">
+        <input type="radio" name="calculations" id="calculation11" checked>
+        <label for="calculation11">TIBC</label>
+        <form>
+          <table id="tibct">
+            <tr>
+              <td align="right">Iron (µg/dL)&nbsp;</td>
+              <td align="left"><input type="text" name="siron" id="siron" style="color:blue;font-weight:bold" onkeyup="calctibc()"></td>
+            </tr>
+            <tr>
+              <td align="right">UIBC (µg/dL)&nbsp;</td>
+              <td align="left"><input type="text" name="suibc" id="suibc" style="color:blue;font-weight:bold" onkeyup="calctibc()"></td>
+            </tr>
+            <tr>
+              <td align="right">TIBC (µg/dL)&nbsp;</td>
+              <td align="center"><output type="text" name="tibc" id="tibc" style="color:blue;font-weight:bold"></td>
+            </tr>
+          </table>
+          <input type="button" class="button" value="Reset" onclick="resettibc()"></input>
+        </form>
+      </section>
+    </div>
+</div>
+<div id="Hematology" class="tabcontent">
+  <h3>Hematology</h3>
+    <div class="sidelink">
+      <section id="calc5">
+        <input type="radio" name="calculations" id="calculation5" checked>
+        <label for="calculation5">Indices</label>
+        <form>
+          <table id="indices">
+            <tr>
+              <td align="right">Hemoglobin (g/dL)&nbsp;</td>
+              <td align="left"><input type="text" name="hgb" id="hgb" style="color:blue;font-weight:bold"></td>
+            </tr>
+            <tr>
+              <td align="right">Hematocrit (%)&nbsp;</td>
+              <td align="left"><input type="text" name="hct" id="hct" style="color:blue;font-weight:bold"></td>
+            </tr>
+            <tr>
+              <td align="right">RBC (x10<sup>12</sup>)&nbsp;</td>
+              <td align="left"><input type="text" name="rbc" id="rbc" style="color:blue;font-weight:bold"></td>
+            </tr>
+            <tr>
+              <td align="right">MCV (fL)&nbsp;</td>
+              <td align="left"><output type="text" name="mcv" id="mcv" style="color:blue;font-weight:bold"></td>
+            </tr>
+            <tr>
+              <td align="right">MCH (pg)&nbsp;</td>
+              <td align="left"><output type="text" name="mch" id="mch" style="color:blue;font-weight:bold"></td>
+            </tr>
+            <tr>
+              <td align="right">MCHC (g/dL) &nbsp;</td>
+              <td align="left"><output type="text" name="mchc" id="mchc" style="color:blue;font-weight:bold"></td>
+            </tr>
+          </table>
+          <input type="button" class="button" value="CALCULATE" onclick="calcindices()"></input>
+          <input type="button" class="button" value="Reset" onclick="resetindices()"></input>
+        </form>
+      </section>
+      <section id="calc6">
+        <input type="radio" name="calculations" id="calculation6" checked>
+        <label for="calculation6">WBC estimate</label>
+        <form>
+          <table id="wbcet">
+            <tr>
+              <td align="right">Average # of WBC&nbsp;</td>
+              <td align="left"><input type="text" name="wbca" id="wbca" style="color:blue;font-weight:bold" onkeyup="calcwbce()"></td>
+            </tr>
+            <tr>
+              <td align="right">WBC estimate (x10<sup>9</sup>/L) &nbsp;</td>
+              <td align="center"><output type="text" name="wbce" id="wbce" style="color:blue;font-weight:bold"></td>
+            </tr>
+          </table>
+          <input type="button" class="button" value="Reset" onclick="resetwbce()"></input>
+        </form>
+      </section>
+      <section id="calc7">
+        <input type="radio" name="calculations" id="calculation7" checked>
+        <label for="calculation7">Platelet estimate</label>
+        <form>
+          <table id="platet">
+            <tr>
+              <td align="right">Average # of Platelets&nbsp;</td>
+              <td align="left"><input type="text" name="plta" id="plta" style="color:blue;font-weight:bold" onkeyup="calcplte()"></td>
+            </tr>
+            <tr>
+              <td align="right">Platelet estimate (x10<sup>9</sup>/L) &nbsp;</td>
+              <td align="center"><output type="text" name="plte" id="plte" style="color:blue;font-weight:bold"></td>
+            </tr>
+          </table>
+          <input type="button" class="button" value="Reset" onclick="resetplte()"></input>
+        </form>
+      </section>
+      <section id="calc8">
+        <input type="radio" name="calculations" id="calculation8" checked>
+        <label for="calculation8">Reticulocyte Count</label>
+        <form>
+          <table id="retict">
+            <tr>
+              <td align="right"># of reticulocytes in 1000 rbcs&nbsp;</td>
+              <td align="left"><input type="text" name="retica" id="retica" style="color:blue;font-weight:bold" onkeyup="calcrtc()"></td>
+            </tr>
+            <tr>
+              <td align="right">RBC (x10<sup>12</sup>/L&nbsp;</td>
+              <td align="left"><input type="text" name="rtcrbc" id="rtcrbc" style="color:blue;font-weight:bold" onkeyup="calcrtc()"></td>
+            </tr>
+            <tr>
+              <td align="right">Relative Reticulocyte Count (%) &nbsp;</td>
+              <td align="center"><output type="text" name="rrc" id="rrc" style="color:blue;font-weight:bold"></td>
+            </tr>
+            <tr>
+              <td align="right">Absolute Reticulocyte Count (x10<sup>9</sup>/L) &nbsp;</td>
+              <td align="center"><output type="text" name="arc" id="arc" style="color:blue;font-weight:bold"></td>
+            </tr>
+          </table>
+          <input type="button" class="button" value="Reset" onclick="resetrtc()"></input>
+        </form>
+      </section>
+      <section id="calc9">
+        <input type="radio" name="calculations" id="calculation9" checked>
+        <label for="calculation9">Corrected WBC for NRBCs</label>
+        <form>
+          <table id="corwbct">
+            <tr>
+              <td align="right"># of NRBCs per 100 WBC&nbsp;</td>
+              <td align="left"><input type="text" name="nrbca" id="nrbca" style="color:blue;font-weight:bold" onkeyup="calccorwbc()"></td>
+            </tr>
+            <tr>
+              <td align="right">WBC (x10<sup>9</sup>/L&nbsp;</td>
+              <td align="left"><input type="text" name="wbcn" id="wbcn" style="color:blue;font-weight:bold" onkeyup="calccorwbc()"></td>
+            </tr>
+            <tr>
+              <td align="right">Corrected WBC (x10<sup>9</sup>/L) &nbsp;</td>
+              <td align="center"><output type="text" name="corwbc" id="corwbc" style="color:blue;font-weight:bold"></td>
+            </tr>
+          </table>
+          <input type="button" class="button" value="Reset" onclick="resetcorwbc()"></input>
+        </form>
+      </section>
+    </div>
+  </div>
+  
+  
+<div id="Microbiology" class="tabcontent">
+  <h3>Microbiology</h3>
+  <p><img src="underconstruction.gif" alt="Page is Under Construction"></p>
+</div>
+
+<div id="QualityControl" class="tabcontent">
+  <h3>Quality Control</h3>
+  <p><img src="underconstruction.gif" alt="Page is Under Construction"></p>
+</div>
+
+ 
+
+</body>
+</html>

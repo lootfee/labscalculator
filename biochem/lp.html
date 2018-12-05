@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><link rel="stylesheet" type="text/css" href="../css/css.css">
+  <title>Laboratory Calculator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <meta charset="utf-8" name="description" content="A complete laboratory calculator for your clinical needs">
+    <h1 style="color:blue;font-family:comic sans ms;" align="center"><a href="home.html">
+      <b>Clinical Laboratory Calculator</b></a>
+    </h1>
+  
+<nav class="nav" style="font-family:comic sans ms;" align="center">
+    <a class="tablinks" onclick="openDept(event, 'Biochemistry')" href="#">BIOCHEMISTRY</a>
+    <a class="tablinks"  onclick="openDept(event, 'Hematology')" href="#">HEMATOLOGY</a>
+    <a class="tablinks"  onclick="openDept(event, 'Microbiology')" href="#">MICROBIOLOGY</a>
+    <a class="tablinks"  onclick="openDept(event, 'QualityControl')" href="#">QUALITY CONTROL</a>
+</nav>
+</head>
+<body><script src="../js/js.js"></script>
+  <div id="Biochemistry" class="tabcontent">
+    <div class="sidelink">
+      <section id="calc1">
+        <input type="radio" name="calculations" id="calculation1" checked><a href="#">
+        <label for="calculation1">Lipid Profile</label></a>
+          <form>
+            <table id="liprof">
+              <tr>
+                <td align="left">Cholesterol&nbsp;</td>
+                <td align="center"><input type="text" name="cholesterol" id="cholesterol" style="color:blue;font-weight:bold"></td>
+              </tr>
+              <tr>
+                <td align="left">HDL&nbsp;</td>
+                <td align="center"><input type="text" name="hdl" id="hdl" style="color:blue;font-weight:bold"></td>
+              </tr>
+              <tr>
+                <td align="left">LDL&nbsp;</td>
+                <td align="center"><input type="text" name="ldl" id="ldl" style="color:blue;font-weight:bold"></td>
+              </tr>
+              <tr>
+                <td align="left">VLDL&nbsp;</td>
+                <td align="center"><output type="text" name="vldl" id="vldl" style="color:blue;font-weight:bold"></td>
+              </tr>
+              <tr>
+                <td align="left">Triglycerides&nbsp;</td>
+                <td align="center"><input type="text" name="triglycerides" id="trig" style="color:blue;font-weight:bold"></td>
+              </tr>
+              <tr>
+                <td align="left">LDL Calculated:&nbsp;</td>
+                <td align="center"><output type="text" name="ldlc" id="ldlc" style="color:blue;font-weight:bold"></td>
+              </tr>
+              <tr>
+                <td align="left">Cholesterol/HDL ratio:&nbsp;</td>
+                <td align="center"><output type="number" name="cholhdl" id="cholhdl" style="color:blue;font-weight:bold"></td>
+              </tr>
+              <tr> 
+                <td align="left">HDL/LDL ratio:&nbsp;</td>
+                <td align="center"><output type="number" name="hdlldl" id="hdlldl" style="color:blue;font-weight:bold"></td>
+              </tr>
+              <tr>
+                <td align="left">LDL/HDL ratio:&nbsp;</td>
+                <td align="center"><output type="number" name="ldlhdl" id="ldlhdl" style="color:blue;font-weight:bold"></output></td>
+              </tr>
+            </table>
+            <input type="button" class="button" value="CALCULATE" onclick="calclp()"></input>
+            <input type="button" class="button" value="Reset" onclick="resetcalclp()"></input>
+          <p><strong>Note:</strong> If there is a value on the direct LDL, this will be used for calculating the ratios; the calculated LDL is just for comparison.
+         </form>
+      </section>
+      <section id="calc2">
+        <input type="radio" name="calculations" id="calculation2">
+        <label for="calculation2"><a href="egfra.html">eGFR</a></label>
+        
+      </section>
+      <section id="calc3">
+        <input type="radio" name="calculations" id="calculation3">
+        <label for="calculation3"><a href="24uchem.html">24 Hr Urine Chemistry</a></label>
+        
+      </section>
+      <section id="calc4">
+        <input type="radio" name="calculations" id="calculation4">
+        <label for="calculation4">Creatinine Clearance</label>
+        
+      </section>
+      <section id="calc10">
+        <input type="radio" name="calculations" id="calculation10">
+        <label for="calculation10">Urea to BUN</label>
+        
+      </section>
+      <section id="calc11">
+        <input type="radio" name="calculations" id="calculation11">
+        <label for="calculation11">TIBC</label>
+        
+      </section>
+    </div>
+  </div>
+ </body>
+ </html>

@@ -1,0 +1,654 @@
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+/* Style the tab */
+.nav {
+    overflow: hidden;
+    border: 5px solid #ccc;
+	padding: 14px 16px;
+    background-color: #f1f1f1;
+   
+}
+
+/* Style the buttons that are used to open the tab content */
+.nav a {
+    background-color: inherit;
+    float: middle;
+    border: 1px;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+	
+}
+
+/* Change background color of buttons on hover */
+.nav a:hover {
+    background-color: #ddd;
+	text-decoration: none;
+}
+
+/* Create an active/current tablink class */
+.nav a.active {
+    background-color: #b4f68f;
+	text-decoration: none;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 0px solid #ccc;
+    border-top: none;
+    height: 100%;
+}
+
+
+
+table, th, td {
+   border: 1px solid black;
+}
+
+#liprof {
+  border-collapse: collapse;
+  width: 80%;
+}
+
+#liprof td, #uchem th {
+    border: 1px solid #ddd;
+    padding: 3px;
+}
+#liprof tr:hover {background-color: #ddd;}
+#liprof tr:nth-child(even){background-color: #a9ecac;}
+#liprof tr:nth-child(odd){background-color: #84d087;}
+#liprof th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+#uchem {
+  border-collapse: collapse;
+  width: 130%;
+}
+
+#uchem td, #uchem th {
+    border: 1px solid #ddd;
+    padding: 3px;
+}
+
+#uchem tr:hover {background-color: #ddd;}
+#uchem tr:nth-child(even){background-color: #a9ecac;}
+#uchem tr:nth-child(odd){background-color: #84d087;}
+#uchem th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+#creaclear {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#creatclear td, #creaclear th {
+  border: 1px solid #ddd;
+  padding: 3px;
+}
+
+#creatclear tr:hover {background-color: #ddd;}
+#creatclear tr:nth-child(even){background-color: #a9ecac;}
+#creatclear tr:nth-child(odd){background-color: #84d087;}
+#creatclear th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}  
+
+#egfrt {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#egfrt td, #egfrt th {
+  border: 1px solid #ddd;
+  padding: 1px;
+}
+
+#egfrt  label {
+  background: inherit;
+  border:0px solid #fff;
+  cursor: pointer;
+  display: block;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 1px 1px;
+  position: relative;
+  width: 200px;
+  z-index:100;
+}
+
+
+#egfrt tr:hover {background-color: #ddd;}
+#egfrt tr:nth-child(even){background-color: #a9ecac;}
+#egfrt tr:nth-child(odd){background-color: #84d087;}
+#egfrt th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}  
+
+#egfrt input[name="egfradgen"] {
+  /*left: -9999px;*/
+  position: absolute;
+  /*top: -9999px;*/
+   visibility: hidden;
+}
+
+#egfrt input[name="egfradrace"] {
+  /*left: -9999px;*/
+  position: absolute;
+  /*top: -9999px;*/
+  visibility: hidden;
+}
+
+#egfrt input[name="egfradgen"]:checked + label { 
+  background: #275929;
+  color: white;
+  border: 0px;
+}
+
+#egfrt input[name="egfradrace"]:checked + label { 
+  background: #275929;
+  color: white;
+  border: 0px;
+}
+
+#egfrt input[name="egfradgen"]:checked ~ form {
+  display: block;
+  
+}
+
+#egfrpt {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#egfrpt td, #egfrpt th {
+  border: 1px solid #ddd;
+  padding: 1px;
+}
+
+#egfrpt  label {
+  background: inherit;
+  border:0px solid #fff;
+  cursor: pointer;
+  display: block;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 1px 1px;
+  position: relative;
+  width: 200px;
+  z-index:100;
+}
+
+
+#egfrpt tr:hover {background-color: #ddd;}
+#egfrpt tr:nth-child(even){background-color: #a9ecac;}
+#egfrpt tr:nth-child(odd){background-color: #84d087;}
+#egfrpt th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}  
+
+#egfrpt input[name="egfradgenp"] {
+  /*left: -9999px;*/
+  position: absolute;
+  /*top: -9999px;*/
+  visibility: hidden;
+}
+
+#egfrpt input[name="egfradh"] {
+  /*left: -9999px;*/
+  position: absolute;
+  /*top: -9999px;*/
+  visibility: hidden;
+}
+
+#egfrpt input[name="egfradgenp"]:checked + label { 
+  background: #275929;
+  color: white;
+  border: 0px;
+}
+
+#egfrpt input[name="egfradh"]:checked + label { 
+  background: #275929;
+  color: white;
+  border: 0px;
+}
+
+#egfrpt input[name="egfradgenp"]:checked ~ form {
+  display: block;
+  
+}
+
+h1 {
+  color: #333;
+  font-family: arial, sans-serif;
+  margin: 1em auto;
+  width: 80%;
+}
+
+.sidelink {
+  color: #333;
+  display: block;
+  margin: 10px;
+  position: relative;
+  width: 100%
+}
+
+.sidelink input[name="calculations"] {
+  /*left: -9999px;*/
+  position: absolute;
+  /*top: -9999px;*/
+  visibility: hidden;
+}
+
+.sidelink section {
+  display: block;
+}
+
+.sidelink section label {
+  background: #0cddee;
+  border:1px solid #fff;
+  cursor: pointer;
+  display: block;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 15px 20px;
+  position: relative;
+  width: 200px;
+  z-index:100;
+}
+
+.sidelink section form {
+  display: none;
+  left: 300px;
+  min-width: 300px;
+  padding: 15px 15px 15px 21px;
+  position: absolute;  
+  top: 0;
+}
+
+.sidelink section form:after {
+  background-color: #fff;
+  bottom: 0;
+  content: "";
+  display: block;
+  left:-229px;
+  position: absolute;
+  top: 0;
+  width: 220px;
+  z-index:1;
+}
+
+.sidelink input[name="calculations"]:checked + label { 
+  background: #95c8f2;
+  color: #2296f5;
+}
+
+.sidelink input[name="calculations"]:checked ~ form {
+  display: block;
+}
+
+@media (max-width: 533px) {
+  
+  h1 {
+    width: 100%;
+  }
+
+  .sidelink {
+    width: 100%;
+  }
+  
+  .sidelink section label {
+    font-size: 1em;
+    width: 160px;
+  }  
+
+ .sidelink section form {
+    left: 200px;
+    min-width: 270px;
+  } 
+  
+  .sidelink section form:after {
+    background-color: #fff;
+    bottom: 0;
+    content: "";
+    display: block;
+    left:-199px;
+    position: absolute;
+    top: 0;
+    width: 200px;
+
+  }  
+  
+}
+
+@media (max-width: 768px) {
+  h1 {
+    width: 96%;
+  }
+
+  .sidelink {
+    width: 96%;
+  }
+}
+
+
+@media (min-width: 1366px) {
+  h1 {
+    width: 70%;
+  }
+
+  .sidelink {
+    width: 70%;
+  }
+}
+
+
+.tabordion {
+  color: #333;
+  display: block;
+  font-family: arial, sans-serif;
+  margin: auto;
+  position: relative;
+  width: 80%;
+}
+
+.tabordion input[name="sections"] {
+  left: -9999px;
+  position: absolute;
+  top: -9999px;
+}
+
+.tabordion section {
+  display: block;
+}
+
+.tabordion section label {
+  background: #0cddee;
+  border:1px solid #fff;
+  cursor: pointer;
+  display: block;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 15px 20px;
+  position: relative;
+  width: 200px;
+  z-index:100;
+}
+
+.tabordion section article {
+  display: none;
+  left: 230px;
+  min-width: 300px;
+  padding: 0 0 0 21px;
+  position: absolute;  
+  top: 0;
+}
+
+.tabordion section article:after {
+  background-color: #fff;
+  bottom: 0;
+  content: "";
+  display: block;
+  left:-229px;
+  position: absolute;
+  top: 0;
+  width: 220px;
+  z-index:1;
+}
+
+.tabordion input[name="sections"]:checked + label { 
+  background: #95c8f2;
+  color: #2296f5;
+}
+
+.tabordion input[name="sections"]:checked ~ article {
+  display: block;
+}
+
+
+@media (max-width: 533px) {
+  
+  h1 {
+    width: 100%;
+  }
+
+  .tabordion {
+    width: 100%;
+  }
+  
+  .tabordion section label {
+    font-size: 1em;
+    width: 160px;
+  }  
+
+ .tabordion section article {
+    left: 200px;
+    min-width: 270px;
+  } 
+  
+  .tabordion section article:after {
+    background-color: #ccc;
+    bottom: 0;
+    content: "";
+    display: block;
+    left:-199px;
+    position: absolute;
+    top: 0;
+    width: 200px;
+
+  }  
+  
+}
+
+
+@media (max-width: 768px) {
+  h1 {
+    width: 96%;
+  }
+
+  .tabordion {
+    width: 96%;
+  }
+}
+
+
+@media (min-width: 1366px) {
+  h1 {
+    width: 70%;
+  }
+
+  .tabordion {
+    width: 70%;
+  }
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+#indices {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#indices td, #indices th {
+  border: 1px solid #ddd;
+  padding: 3px;
+}
+
+#indices tr:hover {background-color: #ddd;}
+#indices tr:nth-child(even){background-color: #a9ecac;}
+#indices tr:nth-child(odd){background-color: #84d087;}
+#indices th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}  
+
+#wbcet {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#wbcet td, #wbcet th {
+  border: 1px solid #ddd;
+  padding: 3px;
+}
+
+#wbcet tr:hover {background-color: #ddd;}
+#wbcet tr:nth-child(even){background-color: #a9ecac;}
+#wbcet tr:nth-child(odd){background-color: #84d087;}
+#wbcet th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}  
+
+
+#platet {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#platet td, #platet th {
+  border: 1px solid #ddd;
+  padding: 3px;
+}
+
+#platet tr:hover {background-color: #ddd;}
+#platet tr:nth-child(even){background-color: #a9ecac;}
+#platet tr:nth-child(odd){background-color: #84d087;}
+#platet th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}  
+
+#retict {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#retict td, #retict th {
+  border: 1px solid #ddd;
+  padding: 3px;
+}
+
+#retict tr:hover {background-color: #ddd;}
+#retict tr:nth-child(even){background-color: #a9ecac;}
+#retict tr:nth-child(odd){background-color: #84d087;}
+#retict th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}  
+
+
+#corwbct {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#corwbct td, #corwbct th {
+  border: 1px solid #ddd;
+  padding: 3px;
+}
+
+#corwbct tr:hover {background-color: #ddd;}
+#corwbct tr:nth-child(even){background-color: #a9ecac;}
+#corwbct tr:nth-child(odd){background-color: #84d087;}
+#corwbct th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}  
+
+#ubunt {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#ubunt td, #ubun th {
+  border: 1px solid #ddd;
+  padding: 3px;
+}
+
+#ubunt tr:hover {background-color: #ddd;}
+#ubunt tr:nth-child(even){background-color: #a9ecac;}
+#ubunt tr:nth-child(odd){background-color: #84d087;}
+#ubunt th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}  
+
+#tibct {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#tibct td, #tibct th {
+  border: 1px solid #ddd;
+  padding: 3px;
+}
+
+#tibct tr:hover {background-color: #ddd;}
+#tibct tr:nth-child(even){background-color: #a9ecac;}
+#tibct tr:nth-child(odd){background-color: #84d087;}
+#tibct th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}  
+

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><link rel="stylesheet" type="text/css" href="../css/css.css">
+  <title>Laboratory Calculator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <meta charset="utf-8" name="description" content="A complete laboratory calculator for your clinical needs">
+    <h1 style="color:blue;font-family:comic sans ms;" align="center"><a href="home.html">
+      <b>Clinical Laboratory Calculator</b></a>
+    </h1>
+  
+<nav class="nav" style="font-family:comic sans ms;" align="center">
+    <a class="tablinks" onclick="openDept(event, 'Biochemistry')" href="biochemistry.html" onload="Open()">BIOCHEMISTRY</a>
+    <a class="tablinks"  onclick="openDept(event, 'Hematology')" href="#">HEMATOLOGY</a>
+    <a class="tablinks"  onclick="openDept(event, 'Microbiology')" href="#">MICROBIOLOGY</a>
+    <a class="tablinks"  onclick="openDept(event, 'QualityControl')" href="#">QUALITY CONTROL</a>
+</nav>
+</head>
+  
+  <div id="Biochemistry" class="tabcontent">
+    <div class="sidelink">
+      <section id="calc1">
+        <input type="radio" name="calculations" id="calculation1">
+        <label for="calculation1" onclick="openDept(event, 'Biochemistry')"><a href="lp.html">Lipid Profile</a></label>
+          
+      </section>
+      <section id="calc2">
+        <input type="radio" name="calculations" id="calculation2" checked>
+        <label for="calculation2"><a href="">eGFR</a></label>
+        <form>
+          <table id="egfrt">
+            <tr><p>ADULT</p>
+              <td align="left">Serum Creatinine:&nbsp;</td>
+              <td align="center" colspan="2"><input type="text" name="screa3" id="screa3" style="color:blue;font-weight:bold"></td>
+            </tr>
+            <tr>
+              <td align="left">Age:&nbsp;</td>
+              <td align="center" colspan="2"><input type="text" name="age" id="age" style="color:blue;font-weight:bold"></td>
+            </tr>
+            <tr>
+              <td align="left">Gender:&nbsp;</td>
+              <td align="center"><input type="radio" name="egfradgen" id="genm" style="color:blue;font-weight:bold" checked><label for="genm">Male</label></td>
+              <td align="center"><input type="radio" name="egfradgen" id="genf" style="color:blue;font-weight:bold" checked><label for="genf">Female</label></td>
+            </tr>
+            <tr>
+              <td align="left">Race:&nbsp;</td>
+              <td align="center"><input type="radio" name="egfradrace" id="raceb" style="color:blue;font-weight:bold" checked><label for="raceb">Black</label></td>
+              <td align="center"><input type="radio" name="egfradrace" id="raceo" style="color:blue;font-weight:bold" checked><label for="raceo">Others</label></td>
+            </tr>
+            <tr>
+              <td align="left">eGFR (mL/min/1.73m<sup>2</sup>):&nbsp;</td>
+              <td align="center" colspan="2"><output type="text" name="egfr" id="egfr" style="color:blue;font-weight:bold"></td>
+            </tr>
+          </table>
+          <input type="button" class="button" value="CALCULATE" onclick="calcegfr()"></input>
+          <input type="button" class="button" value="Reset" onclick="resetegfr()"></input>
+            <p><strong>Note:</strong> The formula used in this equation is based on the CKD-EPI Creatinine Equation (2009)</p>
+            <br></br>
+          <table id="egfrpt">
+            <tr><p>PEDIATRIC</p>
+              <td align="left">Serum Creatinine:&nbsp;</td>
+              <td align="center" colspan="2"><input type="text" name="screa3p" id="screa3p" style="color:blue;font-weight:bold"></td>
+            </tr>
+            <tr>
+              <td align="left">Age:&nbsp;</td>
+              <td align="center" colspan="2"><input type="text" name="agep" id="agep" style="color:blue;font-weight:bold"></td>
+            </tr>
+            <tr>
+              <td align="left">Gender:&nbsp;</td>
+              <td align="center"><input type="radio" name="egfradgenp" id="genmp" style="color:blue;font-weight:bold" checked><label for="genmp">Male</label></td>
+              <td align="center"><input type="radio" name="egfradgenp" id="genfp" style="color:blue;font-weight:bold" checked><label for="genfp">Female</label></td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="2">Height:&nbsp;</td>
+              <td align="center" colspan="2"><input type="text" name="height" id="height" style="color:blue;font-weight:bold"></td>
+            </tr>
+            <tr>
+              <td align="center"><input type="radio" name="egfradh" id="hcm" style="color:blue;font-weight:bold" checked><label for="hcm">Centimeters</label></td>
+              <td align="center"><input type="radio" name="egfradh" id="hmet" style="color:blue;font-weight:bold" checked><label for="hmet">Meters</label></td>
+            </tr>
+            <tr>
+              <td align="left">eGFR (mL/min/1.73m<sup>2</sup>):&nbsp;</td>
+              <td align="center" colspan="2"><output type="text" name="egfr" id="egfr" style="color:blue;font-weight:bold"></td>
+            </tr>
+          </table>
+          <input type="button" class="button" value="CALCULATE" onclick="calcegfr()"></input>
+          <input type="button" class="button" value="Reset" onclick="resetegfr()"></input>
+            <p><strong>Note:</strong> The formula used in this equation is based on the CKD-EPI Creatinine Equation (2009)</p>
+        </form>
+      </section>
+      <section id="calc3">
+        <input type="radio" name="calculations" id="calculation3">
+        <label for="calculation3"><a href="24uchem.html">24 Hr Urine Chemistry</a></label>
+        
+      </section>
+      <section id="calc4">
+        <input type="radio" name="calculations" id="calculation4">
+        <label for="calculation4"><a href="creaclear.html">Creatinine Clearance</a></label>
+        
+      </section>
+      <section id="calc10">
+        <input type="radio" name="calculations" id="calculation10">
+        <label for="calculation10"><a href="ubun.html">Urea to BUN</a></label>
+        
+      </section>
+      <section id="calc11">
+        <input type="radio" name="calculations" id="calculation11">
+        <label for="calculation11"><a href="tibc.html">TIBC</a></label>
+        
+      </section>
+    </div>
+</div>
+
+</body>
+</html>
